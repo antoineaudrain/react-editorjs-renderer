@@ -1,12 +1,9 @@
-{
+module.exports = {
   "presets": [
     "@babel/preset-react",
     "@babel/preset-env"
   ],
   "plugins": [
-    "@babel/plugin-transform-react-jsx",
-    "babel-plugin-add-module-exports",
-    "babel-plugin-class-display-name",
     "@babel/plugin-transform-runtime"
   ]
 }
