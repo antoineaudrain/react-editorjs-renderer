@@ -1,8 +1,6 @@
 
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
-.idea
-
 # dependencies
 node_modules
 
@@ -12,6 +10,7 @@ dist
 .rpt2_cache
 
 # misc
+.idea
 .DS_Store
 .env
 .env.local
