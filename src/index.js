@@ -1,6 +1,5 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-// import styles from './styles.module.css'
 
 import Delimiter from './providers/Delimiter'
 import Header from './providers/Header'
@@ -24,7 +23,7 @@ const EditorRendererProvider = ({
   style = {},
   config = defaultConfig
 }) => (
-  <Fragment>
+  <>
     {data.blocks.map((block, index) => {
       const getProps = (type) => {
         return {
@@ -59,13 +58,10 @@ const EditorRendererProvider = ({
         case 'quote':
           return <Quote {...quoteProps} />
         default:
-          console.error(
-            `React EditorJs Renderer: block ${block.type} is not supported`
-          )
           return <></>
       }
     })}
-  </Fragment>
+  </>
 )
 
 EditorRendererProvider.propTypes = {
@@ -91,12 +87,14 @@ EditorRendererProvider.propTypes = {
   })
 }
 
-export {
-  EditorRendererProvider as default,
-  Delimiter,
-  Header,
-  Image,
-  List,
-  Paragraph,
-  Quote
-}
+export default EditorRendererProvider
+
+// export {
+//   EditorRendererProvider as default,
+//   Delimiter,
+//   Header,
+//   Image,
+//   List,
+//   Paragraph,
+//   Quote
+// }
