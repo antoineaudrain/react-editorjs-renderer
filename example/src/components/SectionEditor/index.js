@@ -5,7 +5,7 @@ const SectionEditor = ({ data }) => {
   return (
     <section className="editor-landing__demo-editor">
       <div className="editor-landing__demo-editor-inner">
-        <pre className="editor" contentEditable>
+        <pre className="editor">
           {JSON.stringify(data, null, 2)}
         </pre>
       </div>
