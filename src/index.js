@@ -1,44 +1,43 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import Delimiter from './providers/Delimiter'
-import Header from './providers/Header'
-import Image from './providers/Image'
-import List from './providers/List'
-import Paragraph from './providers/Paragraph'
-import Quote from './providers/Quote'
-
 import './index.css'
 
-const defaultProviders = [
+import Delimiter from './components/Delimiter'
+import Header from './components/Header'
+import Image from './components/Image'
+import List from './components/List'
+import Paragraph from './components/Paragraph'
+import Quote from './components/Quote'
+
+const defaultComponents = [
   { name: 'delimiter', component: Delimiter },
+  { name: 'paragraph', component: Paragraph },
   { name: 'header', component: Header },
   { name: 'image', component: Image },
-  { name: 'list', component: List },
-  { name: 'paragraph', component: Paragraph },
   { name: 'quote', component: Quote },
+  { name: 'list', component: List },
 ]
 
 const EditorRendererProvider = ({
   data,
   style = {},
-  providers = [],
+  components = [],
 }) => {
   return data.blocks.map((block, index) => {
-    const enabledDefaultProviders = !!providers.length
-      ? defaultProviders.filter(({ name }) => providers.includes(name))
-      : defaultProviders
+    const enabledDefaultProviders = !!components.length
+      ? defaultComponents.filter(({ name }) => components.includes(name))
+      : defaultComponents
     const matchingProvider = enabledDefaultProviders.find(({ name }) => name === block.type)
 
     if (matchingProvider) {
-      const { component: Provider } = matchingProvider
+      const { component: Components } = matchingProvider
       const props = {
         key: index,
         data: block.data,
         style: style[block.type] || {},
       }
 
-      return <Provider {...props} />
+      return <Components {...props} />
     }
   })
 }
@@ -47,7 +46,7 @@ EditorRendererProvider.propTypes = {
   data: PropTypes.shape({
     blocks: PropTypes.array.isRequired
   }),
-  providers: PropTypes.array,
+  components: PropTypes.array,
   style: PropTypes.shape({
     delimiter: PropTypes.object,
     header: PropTypes.object,
