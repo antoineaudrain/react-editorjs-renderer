@@ -22,6 +22,7 @@ const EditorRendererProvider = ({
   data,
   style = undefined,
   components = null,
+  register = null,
 }) => {
   return data.blocks.map((block, index) => {
     const enabledDefaultComponents = components !== null
@@ -51,6 +52,10 @@ EditorRendererProvider.propTypes = {
     blocks: PropTypes.array.isRequired
   }),
   components: PropTypes.array,
+  register: PropTypes.PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    component: PropTypes.element.isRequired
+  })),
   style: PropTypes.shape({
     delimiter: PropTypes.object,
     header: PropTypes.object,

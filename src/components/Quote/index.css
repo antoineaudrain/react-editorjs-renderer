@@ -1,6 +1,6 @@
 .er-quote__blockquote {
     margin: 0;
-    padding-left: 40px;
+    padding: .4em 0 .4em 40px;
 }
 
 .er-quote__inner {
