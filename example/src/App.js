@@ -132,7 +132,7 @@ const App = () => {
         <div className="editor-landing__demo">
           <div className="editor-landing__demo-inner">
             <div className="editorjs-renderer">
-              <EditorRendererProvider disableStyle={true} data={defaultData} className="react-editorjs-renderer" />
+              <EditorRendererProvider data={defaultData} />
             </div>
           </div>
 

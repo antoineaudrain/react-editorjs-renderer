@@ -8,7 +8,7 @@ import List from './providers/List'
 import Paragraph from './providers/Paragraph'
 import Quote from './providers/Quote'
 
-const providers = [
+const defaultProviders = [
   { name: 'delimiter', component: Delimiter },
   { name: 'header', component: Header },
   { name: 'image', component: Image },
@@ -20,11 +20,12 @@ const providers = [
 const EditorRendererProvider = ({
   data,
   style = {},
-  disableProviders = []
+  providers = [],
 }) => {
   return data.blocks.map((block, index) => {
-    const enabledProviders = providers.filter(({ name }) => !disableProviders.includes(name))
-    const matchingProvider = enabledProviders.find(({ name }) => name === block.type)
+    const matchingProvider = defaultProviders
+      .filter(({ name }) => providers.includes(name))
+      .find(({ name }) => name === block.type)
 
     if (matchingProvider) {
       const { component: Provider } = matchingProvider
@@ -43,7 +44,7 @@ EditorRendererProvider.propTypes = {
   data: PropTypes.shape({
     blocks: PropTypes.array.isRequired
   }),
-  disableProviders: PropTypes.array,
+  providers: PropTypes.array,
   disableStyle: PropTypes.bool,
   style: PropTypes.shape({
     delimiter: PropTypes.object,
