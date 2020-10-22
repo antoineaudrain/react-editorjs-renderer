@@ -24,20 +24,18 @@ const EditorRendererProvider = ({
   components = null,
 }) => {
   return data.blocks.map((block, index) => {
-    const enabledDefaultProviders = components !== null
+    const enabledDefaultComponents = components !== null
       ? defaultComponents.filter(({ name }) => components.includes(name))
       : defaultComponents
-    const matchingProvider = enabledDefaultProviders.find(({ name }) => name === block.type)
+    const matchingComponent = enabledDefaultComponents.find(({ name }) => name === block.type)
 
-    if (matchingProvider) {
-      const { component: Components } = matchingProvider
-      const props = {
-        key: index,
-        data: block.data,
-        style: style[block.type] || {},
-      }
-
-      return <Components {...props} />
+    if (matchingComponent) {
+      const { Components } = matchingComponent
+      return <Components
+        key={index}
+        data={block.data}
+        style={style[block.type] || {}}
+      />
     }
   })
 }
