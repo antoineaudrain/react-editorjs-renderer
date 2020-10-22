@@ -11,7 +11,7 @@ const style = {
     margin: 0,
     paddingLeft: 40,
     outline: 'none',
-    listStyle: 'decimal'
+    listStyle: 'disc'
   },
   items: {
     padding: '5.5px 0 5.5px 3px',
