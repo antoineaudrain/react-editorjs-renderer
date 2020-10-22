@@ -123,7 +123,7 @@ const App = () => {
             className="editor-landing__cta"
             href="https://www.npmjs.com/package/react-editorjs-renderer"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Get started
           </a>

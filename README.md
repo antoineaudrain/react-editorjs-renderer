@@ -48,17 +48,6 @@ For custom styling, and other options read on ...
 
 ## API
 
-### Supported blocks/components
-
-| name      |    type   | props         |
-|-----------|:---------:|---------------|
-| Delimiter | component | data, {style} |
-| Header    | component | data, {style} |
-| Image     | component | data, {style} |
-| List      | component | data, {style} |
-| Paragraph | component | data, {style} |
-| Quote     | component | data, {style} |
-
 ### Custom styling
 
 You can style all supported components by passing a style prop to the EditorRendererProvider component.
