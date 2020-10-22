@@ -21,10 +21,10 @@ const defaultComponents = [
 const EditorRendererProvider = ({
   data,
   style = {},
-  components = [],
+  components = null,
 }) => {
   return data.blocks.map((block, index) => {
-    const enabledDefaultProviders = !!components.length
+    const enabledDefaultProviders = components !== null
       ? defaultComponents.filter(({ name }) => components.includes(name))
       : defaultComponents
     const matchingProvider = enabledDefaultProviders.find(({ name }) => name === block.type)
