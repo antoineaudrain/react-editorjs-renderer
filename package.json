@@ -1,6 +1,6 @@
 {
   "name": "react-editorjs-renderer",
-  "version": "1.1.0",
+  "version": "1.3.0",
   "description": "React Editor.js Renderer, based on API and Open Source",
   "main": "lib/index.js",
   "author": "antoineaudrain",

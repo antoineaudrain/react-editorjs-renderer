@@ -6,17 +6,23 @@ import './index.css'
 
 const Image = ({ data, style = {} }) => {
   const getProps = propsConstructor(style)
-  const figureStyle = getProps('image', 'figure')
-  const imageStyle = getProps('image', 'img')
-  const figcaptionStyle = getProps('image', 'figcaption')
+  const filledStyle = getProps('image', 'filled')
+  const imageStyle = getProps('image', 'image')
+  const imagePictureStyle = getProps('image', 'image-picture')
+  const captionStyle = getProps('image', 'caption')
 
   const caption = data.caption && ReactHtmlParser(data.caption)
 
   return (
-    <figure {...figureStyle}>
-      <img src={data.file.url} alt={data.caption || ''} {...imageStyle} />
-      {caption && <figcaption {...figcaptionStyle}>{caption}</figcaption>}
-    </figure>
+    <div {...filledStyle}>
+      <div {...imageStyle}>
+        <img src={data.file.url} alt={data.caption || ''} {...imagePictureStyle} />
+      </div>
+
+      {caption && (
+        <figcaption {...captionStyle}>{caption}</figcaption>
+      )}
+    </div>
   )
 }
 

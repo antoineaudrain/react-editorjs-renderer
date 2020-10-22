@@ -92,7 +92,7 @@
         "file" : {
           "url" : "https://codex.so/public/app/img/external/codex2x.png"
         },
-        "caption" : "",
+        "caption" : "This is an image",
         "withBorder" : false,
         "stretched" : false,
         "withBackground" : false
