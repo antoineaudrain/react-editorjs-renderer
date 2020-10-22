@@ -15,14 +15,14 @@ const App = () => {
         <SectionInfo />
 
         <div className="editor-landing__demo">
-          <SectionEditor data={defaultData} />
+          <SectionPreview data={defaultData} />
 
           <section className="editor-landing__section-header">
             <header>And here is a generated HTML</header>
             Use it in Web, mobile — everywhere. Easy to use and mods.
           </section>
 
-          <SectionPreview data={defaultData} />
+          <SectionEditor data={defaultData} />
         </div>
 
         <section className="editor-landing__section-header editor-landing__section-header--big">

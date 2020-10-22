@@ -1,6 +1,6 @@
 # React Editorjs Renderer [![NPM](https://img.shields.io/npm/v/react-editorjs-renderer.svg)](https://www.npmjs.com/package/react-editorjs-renderer) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-Render React block style hassleless.
+Render block style in React hassleless.
 
 - Webpack module bundlers.
 - See the [demo](https://react-editorjs-renderer-example.netlify.app/).
