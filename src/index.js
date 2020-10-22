@@ -20,7 +20,7 @@ const defaultComponents = [
 
 const EditorRendererProvider = ({
   data,
-  style = {},
+  style = undefined,
   components = null,
 }) => {
   return data.blocks.map((block, index) => {
@@ -30,12 +30,18 @@ const EditorRendererProvider = ({
     const matchingComponent = enabledDefaultComponents.find(({ name }) => name === block.type)
 
     if (matchingComponent) {
-      const { Components } = matchingComponent
-      return <Components
-        key={index}
-        data={block.data}
-        style={style[block.type] || {}}
-      />
+      const { component: Components } = matchingComponent
+      const props = {
+        key: index,
+        data: block.data,
+        style: style
+          ? {
+            disable: style.disable,
+            ...(style[block.type] || {})
+          }
+          : {}
+      }
+      return <Components {...props} />
     }
   })
 }

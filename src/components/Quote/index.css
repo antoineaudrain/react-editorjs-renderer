@@ -11,9 +11,15 @@
 .er-quote__content {
     line-height: 1.6em;
     margin: 0 0 10px 0;
+    font-size: 15px;
+    color: #313649;
+    letter-spacing: .005em;
 }
 
 .er-quote__caption {
     color: #6E798C;
     margin: 0;
+    font-size: 15px;
+    line-height: 1.6em;
+    letter-spacing: .005em;
 }

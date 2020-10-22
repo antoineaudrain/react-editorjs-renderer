@@ -15,4 +15,7 @@
 .er-list__li {
     padding: 5.5px 0 5.5px 3px;
     line-height: 1.6em;
+    font-size: 15px;
+    color: #313649;
+    letter-spacing: .005em;
 }

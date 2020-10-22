@@ -3,11 +3,16 @@
     line-height: 1.6em;
     outline: none;
     padding: .4em 0;
-    font-size: inherit;
+    font-size: 15px;
+    color: #313649;
+    letter-spacing: .005em;
 }
 
 .er-paragraph > a {
-    color: inherit;
+    font-size: 15px;
+    color: #313649;
+    line-height: 1.6em;
+    letter-spacing: .005em;
 }
 
 .er-paragraph > code {
@@ -20,8 +25,13 @@
     font-size: 0.86em;
     font-weight: 500;
     letter-spacing: 0.3px;
+    line-height: 1.6em;
 }
 
 .er-paragraph > mark {
     background: rgba(245,235,111,0.29);
+    font-size: 15px;
+    color: #313649;
+    line-height: 1.6em;
+    letter-spacing: .005em;
 }

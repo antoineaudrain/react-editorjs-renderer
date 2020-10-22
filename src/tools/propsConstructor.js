@@ -1,9 +1,9 @@
-const propsConstructor = (customStyle) => (type, child = '') => {
+const propsConstructor = (style) => (type, child = '') => {
   return {
-    class: `er-${child ? [type, child].join('__') : type}`,
+    class: `er-${child ? [type, child].join('__') : type} ${style.disable ? 'disable-style' : ''}`.trim(),
     style: child
-      ? customStyle[child] || {}
-      : customStyle
+      ? style[child] || {}
+      : style
   }
 }
 
