@@ -30,7 +30,11 @@ Image.propTypes = {
     stretched: PropTypes.bool.isRequired,
     withBackground: PropTypes.bool.isRequired
   }).isRequired,
-  style: PropTypes.object
+  style: PropTypes.shape({
+    figure: PropTypes.object,
+    img: PropTypes.object,
+    figcaption: PropTypes.object,
+  })
 }
 
 export default Image

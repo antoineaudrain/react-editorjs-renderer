@@ -38,7 +38,11 @@ Quote.propTypes = {
     caption: PropTypes.string,
     alignment: PropTypes.oneOf(['left', 'center'])
   }).isRequired,
-  style: PropTypes.object
+  style: PropTypes.shape({
+    blockquote: PropTypes.object,
+    inner: PropTypes.object,
+    content: PropTypes.object,
+  })
 }
 
 export default Quote

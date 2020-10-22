@@ -31,7 +31,11 @@ List.propTypes = {
     style: PropTypes.oneOf(['ordered', 'unordered']).isRequired,
     items: PropTypes.array.isRequired
   }).isRequired,
-  style: PropTypes.object
+  style: PropTypes.shape({
+    ol: PropTypes.object,
+    ul: PropTypes.object,
+    li: PropTypes.object,
+  })
 }
 
 export default List

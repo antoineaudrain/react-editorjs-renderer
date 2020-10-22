@@ -10,9 +10,10 @@
 
 .er-quote__content {
     line-height: 1.6em;
-    margin: 0 0 20px 0;
+    margin: 0 0 10px 0;
 }
 
 .er-quote__caption {
     color: #6E798C;
+    margin: 0;
 }
