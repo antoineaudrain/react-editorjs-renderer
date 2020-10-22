@@ -4,47 +4,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.editor-landing__info {
-  padding-top: 200px;
-  padding-bottom: 70px;
-  background-image: -webkit-gradient(linear,left bottom,left top,from(#fff),to(#eef7ff));
-  background-image: linear-gradient(0deg,#fff,#eef7ff);
-  text-align: center;
-}
-
-.editor-landing__title {
-  margin: 20px 0 0;
-  line-height: 1.2em;
-  font-size: 50px;
-  letter-spacing: .23px;
-  color: #000;
-  font-weight: 600;
-}
-
-.editor-landing__description {
-  font-size: 17.3px;
-  letter-spacing: .13px;
-  line-height: 1.5em;
-  color: #868da1;
-  margin-top: 20px;
-}
-
-.editor-landing__cta {
-  display: inline-block;
-  margin-top: 40px;
-  padding: 13px 19px;
-  border-radius: 30px;
-  background: #388ffe;
-  -webkit-box-shadow: 0 9px 12px -6px rgba(11,132,242,.78);
-  box-shadow: 0 9px 12px -6px rgba(11,132,242,.78);
-  font-size: 16px;
-  color: #fff;
-  -webkit-transition: all .15s ease;
-  transition: all .15s ease;
-  will-change: background-color,box-shadow;
-  text-decoration: none;
-}
-
 .editor-landing__demo {
   background: #EEF5FA;
   border-radius: 100px;
@@ -66,36 +25,6 @@
   }
 }
 
-.editor-landing__demo-inner {
-  background: #FFFF;
-  border-radius: 8px;
-  -webkit-box-shadow: 0 24px 24px -18px rgba(69,104,129,.33), 0 9px 45px 0 rgba(114,119,160,.12);
-  box-shadow: 0 24px 24px -18px rgba(69,104,129,.33), 0 9px 45px 0 rgba(114,119,160,.12);
-  padding: 70px 50px;
-  font-size: 16px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.editor-landing__demo-inner, .editor-landing__demo .codex-editor__redactor {
-  min-height: 450px;
-}
-
-.editorjs-renderer {
-  max-width: 650px !important;
-  margin: 0 auto;
-  transition: background-color .15s ease;
-}
-
-.react-editorjs-renderer {
-  font-size: 15px;
-  color: #313649;
-  line-height: 1.6;
-  letter-spacing: .005em;
-  padding-bottom: 300px;
-  min-height: 450px;
-}
-
 .editor-landing__section-header {
   font-size: 16px;
   max-width: 375px;
@@ -105,22 +34,17 @@
   color: #606578;
 }
 
-.editor-landing__preview {
-  max-width: 650px;
-  margin: 0 auto;
-  color: rgba(34,78,111,.75);
-  position: relative;
+.editor-landing__section-header header {
+  font-weight: 600;
+  margin-bottom: 13px;
 }
 
-.editor-landing__preview-inner {
-  overflow: auto;
+.editor-landing__section-header--big {
+  margin: 130px auto;
+  line-height: 24px;
 }
 
-pre {
-  font-family: monospace,monospace;
-  font-size: 1em;
-}
-
-pre:focus {
-  outline: none;
+.editor-landing__section-header--big header {
+  font-size: 26px;
+  margin-bottom: 20px;
 }

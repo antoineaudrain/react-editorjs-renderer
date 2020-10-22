@@ -4,20 +4,8 @@ import './index.css';
 function Navigation() {
   const routes = [
     {
-      title: 'Guides',
-      url: '/base-concepts',
-    },
-    {
-      title: 'Api',
-      url: '/api',
-    },
-    {
       title: 'Github',
       url: 'https://github.com/antoineaudrain/react-editorjs-renderer',
-    },
-    {
-      title: 'Support Project',
-      url: 'https://opencollective.com/editorjs',
     },
   ]
 
