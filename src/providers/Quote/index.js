@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactHtmlParser from 'react-html-parser'
-import providerPropsConstructor from '../../utils/providerPropsConstructor'
+import providerPropsConstructor from '../../tools/providerPropsConstructor'
 import defaultStyle from './index.style'
 
 const Quote = ({ data, style = {} }) => {

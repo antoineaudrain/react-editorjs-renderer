@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import providerPropsConstructor from '../../utils/providerPropsConstructor'
+import providerPropsConstructor from '../../tools/providerPropsConstructor'
 import defaultStyle from './index.style'
 
 const Delimiter = ({ style = {} }) => {

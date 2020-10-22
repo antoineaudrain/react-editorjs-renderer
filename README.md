@@ -48,6 +48,17 @@ For custom styling, and other options read on ...
 
 ## API
 
+### Supported blocks/components
+
+| name      |    type   | props         |
+|-----------|:---------:|---------------|
+| Delimiter | component | data, {style} |
+| Header    | component | data, {style} |
+| Image     | component | data, {style} |
+| List      | component | data, {style} |
+| Paragraph | component | data, {style} |
+| Quote     | component | data, {style} |
+
 ### Custom styling
 
 You can style all supported components by passing a style prop to the EditorRendererProvider component.
@@ -72,30 +83,7 @@ const customStyle = {
 The values can be nested objects.
 The following example highlights the current possible nesting and keys for the supported component.
 
-### Config
+### License
 
-```javascript
-import EditorRendererProvider from 'src/index';
+prop-types is [MIT licensed](./LICENSE).
 
-...
-
-const config = {
-
-  // disable default style overall
-  disableDefaultStyle: true,
-
-  // or disable it for a specific block
-  header: {
-    disableDefaultStyle: true,
-  },
-
-  // you can also add custom attributes
-  paragraph: {
-    className: 'custom-paragraph',
-    id: 'some text',
-    ...
-  },
-};
-
-<EditorRendererProvider data={data} config={config} />
-```

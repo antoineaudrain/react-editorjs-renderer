@@ -20,8 +20,7 @@ const providers = [
 const EditorRendererProvider = ({
   data,
   style = {},
-  disableProviders = [],
-  disableStyle = false,
+  disableProviders = []
 }) => {
   return data.blocks.map((block, index) => {
     const enabledProviders = providers.filter(({ name }) => !disableProviders.includes(name))
@@ -32,7 +31,7 @@ const EditorRendererProvider = ({
       const props = {
         key: index,
         data: block.data,
-        style: (!disableStyle && style[block.type]) || {},
+        style: style[block.type] || {},
       }
 
       return <Provider {...props} />
