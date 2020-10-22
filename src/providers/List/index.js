@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactHtmlParser from 'react-html-parser'
-import providerPropsConstructor from '../../tools/providerPropsConstructor'
-import defaultStyle from './index.style'
+import propsConstructor from '../../tools/propsConstructor'
+import './index.css'
 
 const List = ({ data, style = {} }) => {
-  const getProps = providerPropsConstructor(defaultStyle, style)
-  const orderedListStyle = getProps('ordered-list')
-  const unorderedListStyle = getProps('unordered-list')
-  const itemStyle = getProps('item')
+  const getProps = propsConstructor(style)
+  const orderedListStyle = getProps('list', 'ol')
+  const unorderedListStyle = getProps('list', 'ul')
+  const itemStyle = getProps('list', 'li')
 
   const content = data.items.map((item, index) => {
     const content = ReactHtmlParser(item)

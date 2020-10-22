@@ -1,34 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactHtmlParser from 'react-html-parser'
-import providerPropsConstructor from '../../tools/providerPropsConstructor'
-import defaultStyle from './index.style'
+import propsConstructor from '../../tools/propsConstructor'
+import './index.css'
 
 const Quote = ({ data, style = {} }) => {
-  const getProps = providerPropsConstructor(defaultStyle, style)
-  const blockquoteStyle = getProps('blockquote')
-  const quoteBoxStyle = getProps('quote-box')
+  const getProps = propsConstructor(style)
+  const blockquoteStyle = getProps('quote', 'blockquote')
+  const quoteInner = getProps('quote', 'inner')
+  const contentStyle = getProps('quote', 'content')
+  const captionStyle = getProps('quote', 'caption')
 
   const getAlignment = () => (data.alignment === 'center' ? 'center' : 'left')
-
-  const contentStyle = {
-    ...getProps('content'),
-    textAlign: getAlignment()
-  }
-  const captionStyle = {
-    ...getProps('caption'),
-    textAlign: getAlignment()
-  }
 
   const content = ReactHtmlParser(data.text)
   const caption = ReactHtmlParser(data.caption)
 
   return (
     <blockquote {...blockquoteStyle}>
-      <div {...quoteBoxStyle}>
-        <p {...contentStyle}>{content}</p>
+      <div {...quoteInner}>
+        <p {...contentStyle} style={{ textAlign: getAlignment() }}>{content}</p>
         {caption && (
-          <p {...captionStyle}>
+          <p {...captionStyle} style={{ textAlign: getAlignment() }}>
             <small>
               <i>{caption}</i>
             </small>

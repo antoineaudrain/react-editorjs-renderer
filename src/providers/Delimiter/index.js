@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import providerPropsConstructor from '../../tools/providerPropsConstructor'
-import defaultStyle from './index.style'
+import propsConstructor from '../../tools/propsConstructor'
+import './index.css'
 
 const Delimiter = ({ style = {} }) => {
-  const getProps = providerPropsConstructor(defaultStyle, style)
+  const getProps = propsConstructor(style)
   const delimiterStyle = getProps('delimiter')
 
   return <div {...delimiterStyle} />

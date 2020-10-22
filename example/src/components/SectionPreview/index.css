@@ -4,7 +4,6 @@
     -webkit-box-shadow: 0 24px 24px -18px rgba(69,104,129,.33), 0 9px 45px 0 rgba(114,119,160,.12);
     box-shadow: 0 24px 24px -18px rgba(69,104,129,.33), 0 9px 45px 0 rgba(114,119,160,.12);
     padding: 70px 50px;
-    font-size: 16px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
@@ -20,10 +19,6 @@
 }
 
 .editor-renderer {
-    font-size: 15px;
-    color: #313649;
-    line-height: 1.6;
-    letter-spacing: .005em;
     padding-bottom: 300px;
     min-height: 450px;
 }

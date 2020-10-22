@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactHtmlParser from 'react-html-parser'
-import providerPropsConstructor from '../../tools/providerPropsConstructor'
-import defaultStyle from './index.style'
+import propsConstructor from '../../tools/propsConstructor'
+import './index.css'
 
 const Image = ({ data, style = {} }) => {
-  const getProps = providerPropsConstructor(defaultStyle, style)
-  const figureStyle = getProps('figure')
-  const imageStyle = getProps('image')
-  const figcaptionStyle = getProps('figcaption')
+  const getProps = propsConstructor(style)
+  const figureStyle = getProps('image', 'figure')
+  const imageStyle = getProps('image', 'img')
+  const figcaptionStyle = getProps('image', 'figcaption')
 
   const caption = data.caption && ReactHtmlParser(data.caption)
 

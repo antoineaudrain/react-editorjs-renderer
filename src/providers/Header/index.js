@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ReactHtmlParser from 'react-html-parser'
-import providerPropsConstructor from '../../tools/providerPropsConstructor'
-import defaultStyle from './index.style'
+import propsConstructor from '../../tools/propsConstructor'
+import './index.css'
 
 const Header = ({ data, style = {} }) => {
-  const getProps = providerPropsConstructor(defaultStyle, style)
+  const getProps = propsConstructor(style)
   const headerStyle = getProps('header')
 
   const content = ReactHtmlParser(data.text)

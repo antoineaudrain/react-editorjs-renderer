@@ -8,6 +8,8 @@ import List from './providers/List'
 import Paragraph from './providers/Paragraph'
 import Quote from './providers/Quote'
 
+import './index.css'
+
 const defaultProviders = [
   { name: 'delimiter', component: Delimiter },
   { name: 'header', component: Header },
@@ -23,9 +25,10 @@ const EditorRendererProvider = ({
   providers = [],
 }) => {
   return data.blocks.map((block, index) => {
-    const matchingProvider = defaultProviders
-      .filter(({ name }) => providers.includes(name))
-      .find(({ name }) => name === block.type)
+    const enabledDefaultProviders = !!providers.length
+      ? defaultProviders.filter(({ name }) => providers.includes(name))
+      : defaultProviders
+    const matchingProvider = enabledDefaultProviders.find(({ name }) => name === block.type)
 
     if (matchingProvider) {
       const { component: Provider } = matchingProvider
@@ -45,7 +48,6 @@ EditorRendererProvider.propTypes = {
     blocks: PropTypes.array.isRequired
   }),
   providers: PropTypes.array,
-  disableStyle: PropTypes.bool,
   style: PropTypes.shape({
     delimiter: PropTypes.object,
     header: PropTypes.object,
