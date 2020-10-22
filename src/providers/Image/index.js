@@ -4,8 +4,8 @@ import ReactHtmlParser from 'react-html-parser'
 import providerPropsConstructor from '../../utils/providerPropsConstructor'
 import defaultStyle from './index.style'
 
-const Image = ({ data, style = {}, config = {} }) => {
-  const getProps = providerPropsConstructor(defaultStyle, style, config)
+const Image = ({ data, style = {} }) => {
+  const getProps = providerPropsConstructor(defaultStyle, style)
   const figureStyle = getProps('figure')
   const imageStyle = getProps('image')
   const figcaptionStyle = getProps('figcaption')
@@ -30,8 +30,7 @@ Image.propTypes = {
     stretched: PropTypes.bool.isRequired,
     withBackground: PropTypes.bool.isRequired
   }).isRequired,
-  style: PropTypes.object,
-  config: PropTypes.object
+  style: PropTypes.object
 }
 
 export default Image

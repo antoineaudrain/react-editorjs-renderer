@@ -4,8 +4,8 @@ import ReactHtmlParser from 'react-html-parser'
 import providerPropsConstructor from '../../utils/providerPropsConstructor'
 import defaultStyle from './index.style'
 
-const Quote = ({ data, style = {}, config = {} }) => {
-  const getProps = providerPropsConstructor(defaultStyle, style, config)
+const Quote = ({ data, style = {} }) => {
+  const getProps = providerPropsConstructor(defaultStyle, style)
   const blockquoteStyle = getProps('blockquote')
   const quoteBoxStyle = getProps('quote-box')
 
@@ -45,8 +45,7 @@ Quote.propTypes = {
     caption: PropTypes.string,
     alignment: PropTypes.oneOf(['left', 'center'])
   }).isRequired,
-  style: PropTypes.object,
-  config: PropTypes.object
+  style: PropTypes.object
 }
 
 export default Quote

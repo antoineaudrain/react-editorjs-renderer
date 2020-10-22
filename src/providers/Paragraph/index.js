@@ -4,8 +4,8 @@ import ReactHtmlParser from 'react-html-parser'
 import providerPropsConstructor from '../../utils/providerPropsConstructor'
 import defaultStyle from './index.style'
 
-const Paragraph = ({ data, style = {}, config = {} }) => {
-  const getProps = providerPropsConstructor(defaultStyle, style, config)
+const Paragraph = ({ data, style = {} }) => {
+  const getProps = providerPropsConstructor(defaultStyle, style)
   const paragraphStyle = getProps('paragraph')
 
   const content = ReactHtmlParser(data.text)
@@ -17,8 +17,7 @@ Paragraph.propTypes = {
   data: PropTypes.shape({
     text: PropTypes.string.isRequired
   }).isRequired,
-  style: PropTypes.object,
-  config: PropTypes.object
+  style: PropTypes.object
 }
 
 export default Paragraph

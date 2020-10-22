@@ -4,8 +4,8 @@ import ReactHtmlParser from 'react-html-parser'
 import providerPropsConstructor from '../../utils/providerPropsConstructor'
 import defaultStyle from './index.style'
 
-const Header = ({ data, style = {}, config = {} }) => {
-  const getProps = providerPropsConstructor(defaultStyle, style, config)
+const Header = ({ data, style = {} }) => {
+  const getProps = providerPropsConstructor(defaultStyle, style)
   const headerStyle = getProps('header')
 
   const content = ReactHtmlParser(data.text)
@@ -22,7 +22,7 @@ const Header = ({ data, style = {}, config = {} }) => {
     case 5:
       return <h5 {...headerStyle}>{content}</h5>
     default:
-      return <h6 {...headerStyle}>{content}</h6>
+      return ''
   }
 }
 
@@ -31,8 +31,7 @@ Header.propTypes = {
     text: PropTypes.string.isRequired,
     level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]).isRequired
   }).isRequired,
-  style: PropTypes.object,
-  config: PropTypes.object
+  style: PropTypes.object
 }
 
 export default Header

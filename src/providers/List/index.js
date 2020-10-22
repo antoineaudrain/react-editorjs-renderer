@@ -4,8 +4,8 @@ import ReactHtmlParser from 'react-html-parser'
 import providerPropsConstructor from '../../utils/providerPropsConstructor'
 import defaultStyle from './index.style'
 
-const List = ({ data, style = {}, config = {} }) => {
-  const getProps = providerPropsConstructor(defaultStyle, style, config)
+const List = ({ data, style = {} }) => {
+  const getProps = providerPropsConstructor(defaultStyle, style)
   const orderedListStyle = getProps('ordered-list')
   const unorderedListStyle = getProps('unordered-list')
   const itemStyle = getProps('item')
@@ -31,8 +31,7 @@ List.propTypes = {
     style: PropTypes.oneOf(['ordered', 'unordered']).isRequired,
     items: PropTypes.array.isRequired
   }).isRequired,
-  style: PropTypes.object,
-  config: PropTypes.object
+  style: PropTypes.object
 }
 
 export default List
