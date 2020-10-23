@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactHtmlParser from 'react-html-parser'
 import propsConstructor from '../../tools/propsConstructor'
-import './index.css'
+import defaultStyle from './index.style'
 
 const Paragraph = ({ data, style = {} }) => {
-  const getProps = propsConstructor(style)
+  const getProps = propsConstructor(style, defaultStyle)
   const paragraphStyle = getProps('paragraph')
 
   const content = ReactHtmlParser(data.text)

@@ -1,9 +1,20 @@
-const propsConstructor = (style) => (type, child = '') => {
+const propsConstructor = (customStyle, defaultStyle) => (type, child = '') => {
+  if (!!child) {
+    return {
+      className: `er-${[type, child].join('__')}`,
+      style: {
+        ...(!customStyle.disable ? defaultStyle[child] : {}),
+        ...(customStyle[child] || {})
+      }
+    }
+  }
+
   return {
-    class: `er-${child ? [type, child].join('__') : type} ${style.disable ? 'disable-style' : ''}`.trim(),
-    style: child
-      ? style[child] || {}
-      : style
+    className: `er-${type}`,
+    style: {
+      ...(!customStyle.disable ? defaultStyle : {}),
+      ...(customStyle || {})
+    }
   }
 }
 

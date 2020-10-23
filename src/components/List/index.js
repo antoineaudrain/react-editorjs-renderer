@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactHtmlParser from 'react-html-parser'
 import propsConstructor from '../../tools/propsConstructor'
-import './index.css'
+import defaultStyle from './index.style'
 
 const List = ({ data, style = {} }) => {
-  const getProps = propsConstructor(style)
+  const getProps = propsConstructor(style, defaultStyle)
   const orderedListStyle = getProps('list', 'ol')
   const unorderedListStyle = getProps('list', 'ul')
   const itemStyle = getProps('list', 'li')

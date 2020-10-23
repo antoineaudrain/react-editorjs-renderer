@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactHtmlParser from 'react-html-parser'
 import propsConstructor from '../../tools/propsConstructor'
-import './index.css'
+import defaultStyle from './index.style'
 
 const Quote = ({ data, style = {} }) => {
-  const getProps = propsConstructor(style)
+  const getProps = propsConstructor(style, defaultStyle)
   const blockquoteStyle = getProps('quote', 'blockquote')
   const quoteInner = getProps('quote', 'inner')
   const contentStyle = getProps('quote', 'content')

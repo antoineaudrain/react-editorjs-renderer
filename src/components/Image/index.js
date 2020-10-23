@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactHtmlParser from 'react-html-parser'
 import propsConstructor from '../../tools/propsConstructor'
-import './index.css'
+import defaultStyle from './index.style'
 
 const Image = ({ data, style = {} }) => {
-  const getProps = propsConstructor(style)
+  const getProps = propsConstructor(style, defaultStyle)
   const filledStyle = getProps('image', 'filled')
   const imageStyle = getProps('image', 'image')
   const imagePictureStyle = getProps('image', 'image-picture')
