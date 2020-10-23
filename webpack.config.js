@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const { join } = require('path');
 
 module.exports = {
@@ -14,6 +15,13 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new webpack.BannerPlugin({
+      entryOnly: true,
+      raw: true,
+      banner: 'typeof window !== "undefined" &&'
+    })
+  ],
   output: {
     path: join(__dirname, 'lib'),
     filename: 'index.js',
