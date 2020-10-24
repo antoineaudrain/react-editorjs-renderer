@@ -22,11 +22,21 @@ const EditorRendererProvider = ({
   style = undefined,
   components = null,
 }) => {
+  const componentsName = components.reduce((acc, cur) => [...acc, cur.name], [])
+  const duplicates = componentsName.some((name, index, array) => array.indexOf(name) !== index)
+
+  if (duplicates) {
+    console.error('React EditorJS Renderer: duplicates `names` in components')
+    return <></>
+  }
+
+  const filteredDefaultComponents = !!components
+    ? defaultComponents.filter(({ name }) => !componentsName.includes(name))
+    : []
+
   return data.blocks.map((block, index) => {
-    const enabledDefaultComponents = components !== null
-      ? defaultComponents.filter(({ name }) => components.includes(name))
-      : defaultComponents
-    const matchingComponent = enabledDefaultComponents.find(({ name }) => name === block.type)
+    const matchingComponent = [...filteredDefaultComponents, ...components]
+      .find(({ name }) => name === block.type)
 
     if (matchingComponent) {
       const { component: Components } = matchingComponent
@@ -49,8 +59,7 @@ EditorRendererProvider.propTypes = {
   data: PropTypes.shape({
     blocks: PropTypes.array.isRequired
   }),
-  components: PropTypes.array,
-  register: PropTypes.PropTypes.arrayOf(PropTypes.shape({
+  components: PropTypes.PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     component: PropTypes.element.isRequired
   })),
