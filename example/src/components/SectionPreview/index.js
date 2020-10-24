@@ -9,16 +9,6 @@ const SectionPreview = ({ data }) => {
         <EditorRendererProvider
           className="editor-renderer"
           data={data}
-          components={[
-            {
-              name: 'header',
-              component: () => <></>
-            },
-            {
-              name: 'paragraph',
-              component: () => <></>
-            }
-          ]}
         />
       </div>
     </section>

@@ -20,10 +20,11 @@ const defaultComponents = [
 const EditorRendererProvider = ({
   data,
   style = undefined,
-  components = null,
+  components = [],
 }) => {
-  const componentsName = components.reduce((acc, cur) => [...acc, cur.name], [])
-  const duplicates = componentsName.some((name, index, array) => array.indexOf(name) !== index)
+  const duplicates = components
+    .reduce((acc, cur) => [...acc, cur.name], [])
+    .some((name, index, array) => array.indexOf(name) !== index)
 
   if (duplicates) {
     console.error('React EditorJS Renderer: duplicates `names` in components')
@@ -31,8 +32,11 @@ const EditorRendererProvider = ({
   }
 
   const filteredDefaultComponents = !!components
-    ? defaultComponents.filter(({ name }) => !componentsName.includes(name))
-    : []
+    ? defaultComponents.filter(({ name }) => !components
+      .reduce((acc, cur) => [...acc, cur.name], [])
+      .includes(name)
+    )
+    : defaultComponents
 
   return data.blocks.map((block, index) => {
     const matchingComponent = [...filteredDefaultComponents, ...components]
