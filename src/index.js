@@ -21,7 +21,6 @@ const EditorRendererProvider = ({
   data,
   style = undefined,
   components = null,
-  register = null,
 }) => {
   return data.blocks.map((block, index) => {
     const enabledDefaultComponents = components !== null
