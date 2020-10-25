@@ -78,6 +78,34 @@ const customStyle = {
 <EditorRendererProvider data={data} style={customStyle} />
 ```
 
+### Register custom component
+
+You can add your own component for any block style type you want.
+The custom component must have the ```data``` props.
+See the example.
+
+```javascript
+import EditorRendererProvider from 'src/index';
+
+...
+
+const Header = ({ data }) => {
+  return (
+    <div>{data.text}</div>
+  )
+}
+
+<EditorRendererProvider
+  data={data}
+  components={[
+    {
+      name: 'header',
+      component: Header
+    } 
+  ]}
+/>
+```
+
 ### License
 
 React EditorJS Renderer is open source software [licensed as MIT](https://github.com/facebook/create-react-app/blob/master/LICENSE).
