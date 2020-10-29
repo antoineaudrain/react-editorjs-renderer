@@ -24,7 +24,7 @@ yarn add react-editorjs-renderer
 **2. Import EditorRendererProvider to your React App** (ES6 module syntax)
 
 ```javascript
-import EditorRendererProvider from 'src/index';
+import EditorRendererProvider from 'react-editorjs-renderer';
 
 ...
 
@@ -40,7 +40,7 @@ export default App;
 ... or using CommonJS syntax:
 
 ```javascript
-const EditorRendererProvider = require('src/index');
+const EditorRendererProvider = require('react-editorjs-renderer');
 
 ...
 
@@ -63,7 +63,7 @@ You can style all supported components by passing a style prop to the EditorRend
 This is an object whose keys correspond to the names of the supported blocks you intend to style.
 
 ```javascript
-import EditorRendererProvider from 'src/index';
+import EditorRendererProvider from 'react-editorjs-renderer';
 
 ...
 
@@ -85,7 +85,7 @@ The custom component must have the ```data``` props.
 See the example.
 
 ```javascript
-import EditorRendererProvider from 'src/index';
+import EditorRendererProvider from 'react-editorjs-renderer';
 
 ...
 
