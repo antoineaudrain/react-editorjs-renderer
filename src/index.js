@@ -17,11 +17,29 @@ const defaultComponents = [
   { name: 'list', component: List },
 ]
 
-const EditorRendererProvider = ({
+EditorRendererProvider.propTypes = {
+  data: PropTypes.shape({
+    blocks: PropTypes.array.isRequired
+  }),
+  components: PropTypes.PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    component: PropTypes.element.isRequired
+  })),
+  style: PropTypes.shape({
+    delimiter: PropTypes.object,
+    header: PropTypes.object,
+    image: PropTypes.object,
+    list: PropTypes.object,
+    paragraph: PropTypes.object,
+    quote: PropTypes.object
+  })
+}
+
+function EditorRendererProvider({
   data,
   style = undefined,
   components = [],
-}) => {
+}) {
   const duplicates = components
     .reduce((acc, cur) => [...acc, cur.name], [])
     .some((name, index, array) => array.indexOf(name) !== index)
@@ -56,24 +74,6 @@ const EditorRendererProvider = ({
       }
       return <Components {...props} />
     }
-  })
-}
-
-EditorRendererProvider.propTypes = {
-  data: PropTypes.shape({
-    blocks: PropTypes.array.isRequired
-  }),
-  components: PropTypes.PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    component: PropTypes.element.isRequired
-  })),
-  style: PropTypes.shape({
-    delimiter: PropTypes.object,
-    header: PropTypes.object,
-    image: PropTypes.object,
-    list: PropTypes.object,
-    paragraph: PropTypes.object,
-    quote: PropTypes.object
   })
 }
 

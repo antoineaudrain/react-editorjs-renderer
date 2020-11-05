@@ -4,7 +4,15 @@ import ReactHtmlParser from 'react-html-parser'
 import propsConstructor from '../../tools/propsConstructor'
 import defaultStyle from './index.style'
 
-const Header = ({ data, style = {} }) => {
+Header.propTypes = {
+  data: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]).isRequired
+  }).isRequired,
+  style: PropTypes.object
+}
+
+function Header({ data, style = {} }) {
   const getProps = propsConstructor(style, defaultStyle)
   const headerStyle = getProps('header')
 
@@ -24,14 +32,6 @@ const Header = ({ data, style = {} }) => {
     default:
       return ''
   }
-}
-
-Header.propTypes = {
-  data: PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]).isRequired
-  }).isRequired,
-  style: PropTypes.object
 }
 
 export default Header

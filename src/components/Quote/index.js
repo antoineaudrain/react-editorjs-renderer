@@ -4,7 +4,20 @@ import ReactHtmlParser from 'react-html-parser'
 import propsConstructor from '../../tools/propsConstructor'
 import defaultStyle from './index.style'
 
-const Quote = ({ data, style = {} }) => {
+Quote.propTypes = {
+  data: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    caption: PropTypes.string,
+    alignment: PropTypes.oneOf(['left', 'center'])
+  }).isRequired,
+  style: PropTypes.shape({
+    blockquote: PropTypes.object,
+    inner: PropTypes.object,
+    content: PropTypes.object,
+  })
+}
+
+function Quote({ data, style = {} }) {
   const getProps = propsConstructor(style, defaultStyle)
   const blockquoteStyle = getProps('quote', 'blockquote')
   const quoteInner = getProps('quote', 'inner')
@@ -30,19 +43,6 @@ const Quote = ({ data, style = {} }) => {
       </div>
     </blockquote>
   )
-}
-
-Quote.propTypes = {
-  data: PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    caption: PropTypes.string,
-    alignment: PropTypes.oneOf(['left', 'center'])
-  }).isRequired,
-  style: PropTypes.shape({
-    blockquote: PropTypes.object,
-    inner: PropTypes.object,
-    content: PropTypes.object,
-  })
 }
 
 export default Quote
