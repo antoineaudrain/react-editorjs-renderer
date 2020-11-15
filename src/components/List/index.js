@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ReactHtmlParser from 'react-html-parser'
 import propsConstructor from '../../tools/propsConstructor'
 import defaultStyle from './index.style'
 
