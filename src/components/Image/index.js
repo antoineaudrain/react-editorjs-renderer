@@ -27,7 +27,7 @@ function Image({ data, style = {} }) {
   const imagePictureStyle = getProps('image', 'image-picture')
   const captionStyle = getProps('image', 'caption')
 
-  const content = data.caption && { __html: data.caption }
+  const caption = data.caption && { __html: data.caption }
 
   return (
     <div {...filledStyle}>
