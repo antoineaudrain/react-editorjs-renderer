@@ -77,12 +77,4 @@ function EditorRendererProvider({
   })
 }
 
-export default {
-  EditorRendererProvider,
-  Delimiter,
-  Header,
-  Image,
-  List,
-  Paragraph,
-  Quote
-}
+export default EditorRendererProvider

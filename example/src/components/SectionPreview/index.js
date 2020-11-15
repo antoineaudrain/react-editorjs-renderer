@@ -1,5 +1,5 @@
 import React from 'react'
-import { EditorRendererProvider } from 'react-editorjs-renderer'
+import EditorRendererProvider from 'react-editorjs-renderer'
 import './index.css'
 
 const SectionPreview = ({ data }) => {
