@@ -36,7 +36,7 @@ function Image({ data, style = {} }) {
       </div>
 
       {caption && (
-        <figcaption {...captionStyle} dangerouslySetInnerHTML={content} />
+        <figcaption {...captionStyle} dangerouslySetInnerHTML={caption} />
       )}
     </div>
   )

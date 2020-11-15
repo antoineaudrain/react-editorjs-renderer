@@ -15,7 +15,7 @@ function Header({ data, style = {} }) {
   const getProps = propsConstructor(style, defaultStyle)
   const headerStyle = getProps('header')
 
-  const content = { __html: data.text }
+  const content = data.text && { __html: data.text }
 
   switch (data.level) {
     case 1:

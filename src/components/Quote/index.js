@@ -25,8 +25,8 @@ function Quote({ data, style = {} }) {
 
   const getAlignment = () => (data.alignment === 'center' ? 'center' : 'left')
 
-  const content = { __html: data.text }
-  const caption = { __html: data.caption }
+  const content = data.text && { __html: data.text }
+  const caption = data.caption && { __html: data.caption }
 
   return (
     <blockquote {...blockquoteStyle}>

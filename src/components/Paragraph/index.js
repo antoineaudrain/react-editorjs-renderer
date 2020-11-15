@@ -14,7 +14,7 @@ function Paragraph({ data, style = {} }) {
   const getProps = propsConstructor(style, defaultStyle)
   const paragraphStyle = getProps('paragraph')
 
-  const content = { __html: data.text }
+  const content = data.text && { __html: data.text }
 
   return <p {...paragraphStyle} dangerouslySetInnerHTML={content} />
 }

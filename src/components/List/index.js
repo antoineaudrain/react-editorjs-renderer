@@ -22,7 +22,7 @@ function List({ data, style = {} }) {
   const itemStyle = getProps('list', 'li')
 
   const content = data.items.map((item, index) => {
-    const content = { __html: item }
+    const content = item && { __html: item }
     return (
       <li key={index} {...itemStyle} dangerouslySetInnerHTML={content} />
     )
