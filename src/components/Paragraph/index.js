@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ReactHtmlParser from 'react-html-parser'
 import propsConstructor from '../../tools/propsConstructor'
 import defaultStyle from './index.style'
 
@@ -15,9 +14,9 @@ function Paragraph({ data, style = {} }) {
   const getProps = propsConstructor(style, defaultStyle)
   const paragraphStyle = getProps('paragraph')
 
-  const content = ReactHtmlParser(data.text)
+  const content = { __html: data.text }
 
-  return <p {...paragraphStyle}>{content}</p>
+  return <p {...paragraphStyle} dangerouslySetInnerHTML={content} />
 }
 
 export default Paragraph

@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ReactHtmlParser from 'react-html-parser'
 import propsConstructor from '../../tools/propsConstructor'
 import defaultStyle from './index.style'
 
@@ -23,11 +22,9 @@ function List({ data, style = {} }) {
   const itemStyle = getProps('list', 'li')
 
   const content = data.items.map((item, index) => {
-    const content = ReactHtmlParser(item)
+    const content = { __html: item }
     return (
-      <li key={index} {...itemStyle}>
-        {content}
-      </li>
+      <li key={index} {...itemStyle} dangerouslySetInnerHTML={content} />
     )
   })
 

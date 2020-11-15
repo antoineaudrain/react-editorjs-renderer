@@ -22,8 +22,7 @@
     "lint:fix": "eslint src *.js --fix"
   },
   "dependencies": {
-    "prop-types": "^15.7.2",
-    "react-html-parser": "^2.0.2"
+    "prop-types": "^15.7.2"
   },
   "peerDependencies": {
     "react": "^17.0.0"

@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ReactHtmlParser from 'react-html-parser'
 import propsConstructor from '../../tools/propsConstructor'
 import defaultStyle from './index.style'
 
@@ -26,17 +25,17 @@ function Quote({ data, style = {} }) {
 
   const getAlignment = () => (data.alignment === 'center' ? 'center' : 'left')
 
-  const content = ReactHtmlParser(data.text)
-  const caption = ReactHtmlParser(data.caption)
+  const content = { __html: data.text }
+  const caption = { __html: data.caption }
 
   return (
     <blockquote {...blockquoteStyle}>
       <div {...quoteInner}>
-        <p {...contentStyle} style={{ textAlign: getAlignment() }}>{content}</p>
+        <p {...contentStyle} style={{ textAlign: getAlignment() }} dangerouslySetInnerHTML={content} />
         {caption && (
           <p {...captionStyle} style={{ textAlign: getAlignment() }}>
             <small>
-              <i>{caption}</i>
+              <i dangerouslySetInnerHTML={caption} />
             </small>
           </p>
         )}

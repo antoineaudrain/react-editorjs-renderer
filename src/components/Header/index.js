@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ReactHtmlParser from 'react-html-parser'
 import propsConstructor from '../../tools/propsConstructor'
 import defaultStyle from './index.style'
 
@@ -16,19 +15,19 @@ function Header({ data, style = {} }) {
   const getProps = propsConstructor(style, defaultStyle)
   const headerStyle = getProps('header')
 
-  const content = ReactHtmlParser(data.text)
+  const content = { __html: data.text }
 
   switch (data.level) {
     case 1:
-      return <h1 {...headerStyle}>{content}</h1>
+      return <h1 {...headerStyle} dangerouslySetInnerHTML={content} />
     case 2:
-      return <h2 {...headerStyle}>{content}</h2>
+      return <h2 {...headerStyle} dangerouslySetInnerHTML={content} />
     case 3:
-      return <h3 {...headerStyle}>{content}</h3>
+      return <h3 {...headerStyle} dangerouslySetInnerHTML={content} />
     case 4:
-      return <h4 {...headerStyle}>{content}</h4>
+      return <h4 {...headerStyle} dangerouslySetInnerHTML={content} />
     case 5:
-      return <h5 {...headerStyle}>{content}</h5>
+      return <h5 {...headerStyle} dangerouslySetInnerHTML={content} />
     default:
       return ''
   }

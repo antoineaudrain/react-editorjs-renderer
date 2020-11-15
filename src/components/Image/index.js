@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ReactHtmlParser from 'react-html-parser'
 import propsConstructor from '../../tools/propsConstructor'
 import defaultStyle from './index.style'
 
@@ -28,7 +27,7 @@ function Image({ data, style = {} }) {
   const imagePictureStyle = getProps('image', 'image-picture')
   const captionStyle = getProps('image', 'caption')
 
-  const caption = data.caption && ReactHtmlParser(data.caption)
+  const content = data.caption && { __html: data.caption }
 
   return (
     <div {...filledStyle}>
@@ -37,7 +36,7 @@ function Image({ data, style = {} }) {
       </div>
 
       {caption && (
-        <figcaption {...captionStyle}>{caption}</figcaption>
+        <figcaption {...captionStyle} dangerouslySetInnerHTML={content} />
       )}
     </div>
   )
