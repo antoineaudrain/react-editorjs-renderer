@@ -4,15 +4,6 @@ object-assign
 @license MIT
 */
 
-/*!
- * The buffer module from node.js, for the browser.
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
- */
-
-/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
-
 /** @license React v17.0.0
  * react.production.min.js
  *
