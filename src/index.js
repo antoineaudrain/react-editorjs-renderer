@@ -77,7 +77,7 @@ function EditorRendererProvider({
   })
 }
 
-export {
+export default {
   EditorRendererProvider,
   Delimiter,
   Header,
