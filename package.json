@@ -1,6 +1,6 @@
 {
   "name": "react-editorjs-renderer",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "React Editor.js Renderer, based on API and Open Source",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": "antoineaudrain/react-editorjs-renderer",
   "publishConfig": {
-    "registry": "https://www.npmjs.com/package/react-editorjs-renderer"
+    "registry": "https://npm.pkg.github.com/"
   },
   "bugs": {
     "url": "https://github.com/antoineaudrain/react-editorjs-renderer/issues"
