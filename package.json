@@ -29,8 +29,6 @@
     "lint:fix": "eslint src *.js --fix"
   },
   "dependencies": {
-    "@rollup/plugin-babel": "^5.2.1",
-    "enzyme-adapter-react-16": "^1.15.5",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
@@ -43,7 +41,9 @@
     "@babel/preset-react": "^7.12.1",
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
+    "@rollup/plugin-babel": "^5.2.1",
     "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^7.11.0",
     "react": "^17.0.0",
     "rollup": "^1.29.0"
