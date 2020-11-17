@@ -24,8 +24,10 @@
     "link": "cd src/ && npm run build:rollup && npm link",
     "link:react": "npm run link && cd example/react/ && npm i && npm link react-editorjs-renderer",
     "link:next": "npm run link && cd example/next/ && npm i && npm link react-editorjs-renderer",
-    "example:react": "npm run link:react && cd example/react/ && npm run build && npm start",
-    "example:next": "npm run link:next && cd example/next/ && npm run build && npm start",
+    "build:example:react": "npm run link:react && cd example/react/ && npm run build",
+    "build:example:next": "npm run link:react && cd example/react/ && npm run build",
+    "example:react": "cd example/react/ && npm start",
+    "example:next": "cd example/next/ && npm start",
     "lint": "eslint src *.js",
     "lint:fix": "eslint src *.js --fix"
   },
