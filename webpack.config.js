@@ -15,13 +15,13 @@ module.exports = {
       }
     ]
   },
-  // plugins: [
-  //   new webpack.BannerPlugin({
-  //     entryOnly: true,
-  //     raw: true,
-  //     banner: 'typeof window !== "undefined" &&'
-  //   })
-  // ],
+  plugins: [
+    new webpack.BannerPlugin({
+      entryOnly: true,
+      raw: true,
+      banner: 'typeof window !== "undefined" &&'
+    })
+  ],
   output: {
     path: join(__dirname, 'lib'),
     filename: 'index.js',

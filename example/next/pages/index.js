@@ -3,6 +3,7 @@ import Navigation from '../components/Navigation'
 import SectionInfo from '../components/SectionInfo'
 import SectionPreview from '../components/SectionPreview'
 import SectionEditor from '../components/SectionEditor'
+import defaultData from '../config/block-style.json'
 
 export default function Home() {
   return (
