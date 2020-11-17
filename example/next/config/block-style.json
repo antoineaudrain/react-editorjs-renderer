@@ -97,6 +97,25 @@
         "stretched" : false,
         "withBackground" : false
       }
+    },
+    {
+      "type" : "table",
+      "data" : {
+        "content" : [
+          [
+            "this is a cell",
+            "this is a cell"
+          ],
+          [
+            "this is a cell",
+            "this is a cell"
+          ],
+          [
+            "this is a cell",
+            "this is a cell"
+          ]
+        ]
+      }
     }
   ],
   "version" : "2.18.0"

@@ -1,0 +1,19 @@
+.editor_landing__demo_editor {
+    max_width: 650px;
+    margin: 0 auto;
+    color: rgba(34,78,111,.75);
+    position: relative;
+}
+
+.editor_landing__demo_editor_inner {
+    overflow: auto;
+}
+
+.editor {
+    font_family: monospace,monospace;
+    font_size: 1em;
+}
+
+.editor:focus {
+    outline: none;
+}

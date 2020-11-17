@@ -1,0 +1,24 @@
+.editor_landing__demo_preview {
+    background: #FFFF;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 24px 24px -18px rgba(69,104,129,.33), 0 9px 45px 0 rgba(114,119,160,.12);
+    box-shadow: 0 24px 24px -18px rgba(69,104,129,.33), 0 9px 45px 0 rgba(114,119,160,.12);
+    padding: 70px 50px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.editor_landing__demo_preview, .editor_landing__demo_preview_inner {
+    min-height: 450px;
+}
+
+.editor_landing__demo_preview_inner {
+    max-width: 650px !important;
+    margin: 0 auto;
+    transition: background-color .15s ease;
+}
+
+.editor_renderer {
+    padding-bottom: 300px;
+    min-height: 450px;
+}
