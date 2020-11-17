@@ -8,6 +8,9 @@
   "author": "antoineaudrain",
   "license": "MIT",
   "repository": "antoineaudrain/react-editorjs-renderer",
+  "publishConfig": {
+    "registry": "https://www.npmjs.com/package/react-editorjs-renderer"
+  },
   "bugs": {
     "url": "https://github.com/antoineaudrain/react-editorjs-renderer/issues"
   },
