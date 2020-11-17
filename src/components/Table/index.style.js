@@ -20,7 +20,7 @@ const style = {
   cell: {
     border: '1px solid #dbdbe2',
     padding: 0,
-    verticalAlign: top,
+    verticalAlign: 'top',
   },
   content: {
     padding: 10,
