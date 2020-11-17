@@ -1,6 +1,6 @@
 {
   "name": "react-editorjs-renderer",
-  "version": "2.2.7",
+  "version": "2.3.0",
   "description": "React Editor.js Renderer, based on API and Open Source",
   "main": "lib/index.js",
   "author": "antoineaudrain",
@@ -18,6 +18,11 @@
   ],
   "scripts": {
     "build": "webpack --mode production",
+    "link": "cd src/ && npm run build && npm link",
+    "link:react": "npm run link && cd example/react/ && npm i && npm link react-editorjs-renderer",
+    "link:next": "npm run link && cd example/next/ && npm i && npm link react-editorjs-renderer",
+    "example:react": "npm run link:react && cd example/react/ && npm start",
+    "example:next": "npm run link:next && cd example/next/ && npm run build && npm start",
     "lint": "eslint src *.js",
     "lint:fix": "eslint src *.js --fix"
   },

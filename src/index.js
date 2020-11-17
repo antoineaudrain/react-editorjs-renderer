@@ -7,6 +7,7 @@ import Image from './components/Image'
 import List from './components/List'
 import Paragraph from './components/Paragraph'
 import Quote from './components/Quote'
+import Table from './components/Table'
 
 const defaultComponents = [
   { name: 'delimiter', component: Delimiter },
@@ -15,6 +16,7 @@ const defaultComponents = [
   { name: 'image', component: Image },
   { name: 'quote', component: Quote },
   { name: 'list', component: List },
+  { name: 'table', component: Table },
 ]
 
 EditorRendererProvider.propTypes = {
