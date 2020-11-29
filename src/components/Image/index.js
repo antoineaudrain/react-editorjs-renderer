@@ -14,6 +14,7 @@ Image.propTypes = {
     withBackground: PropTypes.bool.isRequired
   }).isRequired,
   style: PropTypes.shape({
+    disable: PropTypes.bool,
     figure: PropTypes.object,
     img: PropTypes.object,
     figcaption: PropTypes.object,

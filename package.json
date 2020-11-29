@@ -1,6 +1,6 @@
 {
   "name": "react-editorjs-renderer",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "React Editor.js Renderer, based on API and Open Source",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",

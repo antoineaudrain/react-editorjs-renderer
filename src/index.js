@@ -28,6 +28,7 @@ EditorRendererProvider.propTypes = {
     component: PropTypes.element.isRequired
   })),
   style: PropTypes.shape({
+    disable: PropTypes.bool,
     delimiter: PropTypes.object,
     header: PropTypes.object,
     image: PropTypes.object,

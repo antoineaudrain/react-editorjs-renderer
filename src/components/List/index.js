@@ -9,6 +9,7 @@ List.propTypes = {
     items: PropTypes.array.isRequired
   }).isRequired,
   style: PropTypes.shape({
+    disable: PropTypes.bool,
     ol: PropTypes.object,
     ul: PropTypes.object,
     li: PropTypes.object,

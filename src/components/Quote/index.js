@@ -10,6 +10,7 @@ Quote.propTypes = {
     alignment: PropTypes.oneOf(['left', 'center'])
   }).isRequired,
   style: PropTypes.shape({
+    disable: PropTypes.bool,
     blockquote: PropTypes.object,
     inner: PropTypes.object,
     content: PropTypes.object,

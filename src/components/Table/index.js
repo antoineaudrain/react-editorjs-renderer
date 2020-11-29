@@ -10,6 +10,7 @@ Table.propTypes = {
     ).isRequired,
   }).isRequired,
   style: PropTypes.shape({
+    disable: PropTypes.bool,
     table: PropTypes.object,
     body: PropTypes.object,
     row: PropTypes.object,
